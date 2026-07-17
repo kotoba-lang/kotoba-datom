@@ -1,0 +1,19 @@
+{:paths ["src"]
+ ;; Zero-dep, portable .cljc. The kotoba Datom-LOG codec: content-addressed
+ ;; append-only commit-DAG (sha256 CIDs, Python-parity canonical JSON). Namespace
+ ;; is `kotoba.datom` (unchanged from its monorepo origin so consumers repoint by
+ ;; deps only, no source edits). Extracted from etzhayyim/root/20-actors/kotodama
+ ;; (ADR-2606112300 + ADR-2605312345; 20-actors monorepo→multirepo split).
+ ;; NOTE: distinct from kotoba-lang/datom (ns `datom.core`, an EAVT data
+ ;; representation for the CAE/vehicle-design stack) — different API, different
+ ;; purpose. The only host seam is sha-256 (`kotoba.datom/*sha256-hex*`).
+ :deps {}
+ :aliases
+ {:test {:extra-paths ["test"]
+         :extra-deps {io.github.cognitect-labs/test-runner
+                      {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
+         :main-opts ["-m" "cognitect.test-runner"]
+         :exec-fn cognitect.test-runner.api/test}
+  :lint {:replace-deps {clj-kondo/clj-kondo {:mvn/version "2024.11.14"}}
+         :main-opts ["-m" "clj-kondo.main" "--lint" "src" "test"
+                     "--fail-level" "error"]}}}
