@@ -51,6 +51,6 @@ io.github.kotoba-lang/kotoba-datom {:git/url "https://github.com/kotoba-lang/kot
 ## Test / lint
 
 ```bash
-clojure -M:test    # cognitect test-runner (kotoba.datom-test)
-clojure -M:lint    # clj-kondo (fail on error)
+kbb -M:test    # cognitect test-runner (kotoba.datom-test)
+kbb -M:lint    # clj-kondo (fail on error)
 ```
