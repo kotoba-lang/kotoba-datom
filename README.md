@@ -24,7 +24,7 @@ canonical state).
 ## Origin
 
 Extracted verbatim (byte-identical, ns unchanged) from the monorepo path
-`etzhayyim/root/20-actors/kotodama/src/kotoba/datom.cljc` as part of the
+`etzhayyim/root/20-actors/kotodama/src/kotoba/datom.cljk` as part of the
 `20-actors` monorepo→multirepo (west) split. Consumers that used to reach it via
 a relative `:paths`/`:source-paths` into `20-actors/kotodama/src` repoint to this
 repo with no source edits (the namespace stays `kotoba.datom`).
